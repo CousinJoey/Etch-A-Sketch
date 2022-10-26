@@ -8,3 +8,34 @@
     display: flex;
     justify-content: center;
 }
+
+#gridDisplay {
+    display: grid;
+    width: 500px;
+    height: 500px;
+    padding: 20px;
+}
+
+.gridcontainer {
+    display: flex;
+    justify-content: center;
+}
+
+.cubes {
+    display: flex;
+}
+
+.side-btns {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 50px;
+    padding-left: 20px;
+    padding-top: 60px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.editcontainer {
+
+}

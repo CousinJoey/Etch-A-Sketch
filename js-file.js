@@ -2,7 +2,9 @@ function placeHolder(x) {
     console.log("this function does nothing")
 }
 
-globalPara = 0
+globalPara = 16
+
+
 
 const adjustSize = document.querySelector("#size-btn")
 
@@ -22,17 +24,21 @@ function popup(x) {
     dynamicGrid(finalPara)
 }
 
+function bgColor(){
+    return '#'+(Math.random().toString(16).substr(-6));
+}
 
 const gridDisplay = document.querySelector("#gridDisplay")
 
 function dynamicGrid(gridSize) {
     for(let i=0;i<gridSize;i++) {
-        const temp = document.createElement("div")
+        const temp = document.createElement("div");
+        temp.className = "cubes";
         gridDisplay.append(temp);
-        temp.textContent = `${i+1}`;
+        temp.style.backgroundColor = bgColor();
+        gridDisplay.style.setProperty('grid-template-columns', `repeat(${Math.sqrt(gridSize)}, 1fr`);
     }
     console.log(globalPara)
 }
 
-gridDisplay.style.setProperty('grid-template-columns', 10, 1)
-gridDisplay.style.setProperty('grid-template-rows', 10, 1)
+window.onload = dynamicGrid(256)
