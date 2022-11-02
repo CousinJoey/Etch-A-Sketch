@@ -1,13 +1,10 @@
-function placeHolder(x) {
-    console.log("this function does nothing")
-}
-
 globalPara = 16
+tempArr = []
+eraserToggle = false
 
-
-
+const drawbtn = document.querySelector("#color-btn")
 const adjustSize = document.querySelector("#size-btn")
-
+const eraserbtn = document.querySelector("#eraser-btn")
 adjustSize.addEventListener("click", popup);
 
 
@@ -24,21 +21,55 @@ function popup(x) {
     dynamicGrid(finalPara)
 }
 
+
 function bgColor(){
     return '#'+(Math.random().toString(16).substr(-6));
 }
+
 
 const gridDisplay = document.querySelector("#gridDisplay")
 
 function dynamicGrid(gridSize) {
     for(let i=0;i<gridSize;i++) {
-        const temp = document.createElement("div");
-        temp.className = "cubes";
+        let temp = document.createElement("div");
+        temp.classList.add = ("cubes")
         gridDisplay.append(temp);
         temp.style.backgroundColor = bgColor();
         gridDisplay.style.setProperty('grid-template-columns', `repeat(${Math.sqrt(gridSize)}, 1fr`);
-    }
-    console.log(globalPara)
+        tempArr[i] = temp
 }
+}
+
+
+function changeColor(e) {
+    e.preventDefault();
+    this.style.backgroundColor="black"
+
+    if (eraserToggle === true) {
+        this.style.backgroundColor="white"
+    }
+}
+
+function startDrawing(e) {
+    e.preventDefault();
+    tempArr.forEach((div) => div.addEventListener("mousedown", changeColor))
+    tempArr.forEach((div) => div.addEventListener("mouseenter", changeColor))
+}
+
+function stopDrawing() {
+    console.log("stopped drawing")
+    tempArr.forEach((div) => div.removeEventListener("mouseenter", changeColor))
+}
+
+function draw() {
+    gridDisplay.addEventListener("mousedown", startDrawing)
+    window.addEventListener("mouseup", stopDrawing)
+}
+
+
+drawbtn.addEventListener("click", draw)
+drawbtn.addEventListener("click", (e) => eraserToggle = false)
+eraserbtn.addEventListener("click", (e) => eraserToggle = true)
+
 
 window.onload = dynamicGrid(256)
