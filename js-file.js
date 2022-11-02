@@ -13,18 +13,19 @@ adjustSize.addEventListener("click", popup);
 
 
 function popup(x) {
-    const clearGrid = document.getElementById("gridDisplay");
-    while (clearGrid.lastElementChild) {
-        clearGrid.removeChild(clearGrid.lastElementChild);
-    }
     let para = prompt("Please enter a value", );
         if (para > 64) {
             alert("please pick a smaller number, 64 or less!")
+        } else {
+            const clearGrid = document.getElementById("gridDisplay");
+            while (clearGrid.lastElementChild) {
+                clearGrid.removeChild(clearGrid.lastElementChild);
+            }
+            let subPara = parseInt(para)
+            globalPara = subPara
+            let finalPara = (subPara * subPara)
+            dynamicGrid(finalPara)
         }
-    let subPara = parseInt(para)
-    globalPara = subPara
-    let finalPara = (subPara * subPara)
-    dynamicGrid(finalPara)
 }
 
 
@@ -44,7 +45,9 @@ function dynamicGrid(gridSize) {
 
 function changeColor(e) {
     e.preventDefault();
-    this.style.backgroundColor="black"
+    const colorPicker = document.querySelector("input#colorpicker")
+    const colorValue = colorPicker.value
+    this.style.backgroundColor=colorValue
 
     if (eraserToggle === true) {
         this.style.backgroundColor="white"
