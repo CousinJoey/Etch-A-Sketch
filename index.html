@@ -12,21 +12,17 @@
 <body>
     <h1 class="header">Etch-A-Sketch</h1>
 
-    <div class ="button-container">
-    <button id="size-btn">Adjust Size</button> 
-    </div>   
-
     <div class="gridcontainer">
     <div class="editcontainer">
         <div class="side-btns">
            <div class="picker-btn"><input type="color" id="colorpicker"></div>
-            <button id="color-btn">Brush</button>
-            <button id="rainbow-btn">Rainbow Brush</button>
-            <button id="eraser-btn">Eraser</button>
-            <button id="clear-btn">Clear</button>
-          <!--  <button id="slider-btn">Slider</button> -->
+            <button id="color-btn" class="brush-btn brush-shadow-drop brush-shadow-drop--orange">Brush</button>
+            <button id="rainbow-btn" class="rainbow-btn rainbow-shadow-drop rainbow-shadow-drop--orange">Rainbow Brush</button>
+            <button id="eraser-btn" class="eraser-btn eraser-shadow-drop eraser-shadow-drop--orange">Eraser</button>
+            <button id="clear-btn" class="clear-btn clear-shadow-drop clear-shadow-drop--orange">Clear</button>
+            <div class="slidecontainer"> <input type="range" min="1" max="64" value="16" class="slider" id="myRange"> </div>
+            <div id="sliderValue"></div>
         </div>
-
     </div>
     <div id="gridDisplay"></div>
     </div>

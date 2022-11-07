@@ -1,7 +1,13 @@
+body {
+    background-color: #F1F1EE;
+}
+
 .header {
     display: flex;
     justify-content: center;
-    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    color: orange;
 }
 
 .button-container {
@@ -15,7 +21,7 @@
     height: 500px;
     margin: 20px;
     border: solid;
-    border-color: black
+    border-color: orange
 }
 
 .gridcontainer {
@@ -31,7 +37,6 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    gap: 50px;
     padding-left: 20px;
     padding-top: 60px;
     padding-right: 20px;
@@ -39,4 +44,194 @@
 }
 
 #colorpicker {
+    background: transparent;
+    width: 180px;
+    height: 58.35px;
+    border: none;
+    padding: 0;
+    margin: 0;
 }
+
+.brush-btn {
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+  } 
+   
+  .brush-btn:hover .brush-btn-slide-show-text1 {
+    margin-left: 65px;
+  } 
+   
+  .brush-shadow-drop {
+    position: relative;
+    margin-top: 10%;
+    background: rgb(249, 250, 250);
+    padding: 20px;
+    font-size: 0.9em;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out 0s;
+    left: 0px;
+    top: 0px;
+    width: 180px;
+  } 
+   
+  .brush-shadow-drop:hover {
+    left: 4px;
+    top: 4px;
+    box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px;
+  } 
+   
+  .brush-shadow-drop--orange {
+    border: 1px solid rgb(254, 174, 0);
+    color: rgb(254, 174, 0);
+    box-shadow: rgb(254, 174, 0) 4px 4px 0px 0px;
+  } 
+
+
+.rainbow-btn {
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+  } 
+   
+  .rainbow-btn:hover .rainbow-btn-slide-show-text1 {
+    margin-left: 65px;
+  } 
+   
+  .rainbow-shadow-drop {
+    position: relative;
+    margin-top: 10%;
+    background: rgb(249, 250, 250);
+    padding: 20px;
+    font-size: 0.9em;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out 0s;
+    left: 0px;
+    top: 0px;
+    width: 180px;
+  } 
+   
+  .rainbow-shadow-drop:hover {
+    left: 4px;
+    top: 4px;
+    box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px;
+  } 
+   
+  .rainbow-shadow-drop--orange {
+    border: 1px solid rgb(254, 174, 0);
+    color: rgb(254, 174, 0);
+    box-shadow: rgb(254, 174, 0) 4px 4px 0px 0px;
+  }
+
+.eraser-btn {
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+  } 
+   
+  .eraser-btn:hover .eraser-btn-slide-show-text1 {
+    margin-left: 65px;
+  } 
+   
+  .eraser-shadow-drop {
+    position: relative;
+    margin-top: 10%;
+    background: rgb(249, 250, 250);
+    padding: 20px;
+    font-size: 0.9em;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out 0s;
+    left: 0px;
+    top: 0px;
+    width: 180px;
+  } 
+   
+  .eraser-shadow-drop:hover {
+    left: 4px;
+    top: 4px;
+    box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px;
+  } 
+   
+  .eraser-shadow-drop--orange {
+    border: 1px solid rgb(254, 174, 0);
+    color: rgb(254, 174, 0);
+    box-shadow: rgb(254, 174, 0) 4px 4px 0px 0px;
+  }
+
+.clear-btn {
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+  } 
+   
+  .clear-btn:hover .clear-btn-slide-show-text1 {
+    margin-left: 65px;
+  } 
+   
+  .clear-shadow-drop {
+    position: relative;
+    margin-top: 10%;
+    background: rgb(249, 250, 250);
+    padding: 20px;
+    font-size: 0.9em;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out 0s;
+    left: 0px;
+    top: 0px;
+    width: 180px;
+  } 
+   
+  .clear-shadow-drop:hover {
+    left: 4px;
+    top: 4px;
+    box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px;
+  } 
+   
+  .clear-shadow-drop--orange {
+    border: 1px solid rgb(254, 174, 0);
+    color: rgb(254, 174, 0);
+    box-shadow: rgb(254, 174, 0) 4px 4px 0px 0px;
+  }
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    outline: none;
+    background: #8B633B;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-apperance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: orange;
+    cursor: pointer;
+}
+
+#sliderValue {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    color: #8B633B;
+}
+
+.slidecontainer {
+    margin-top: 25px;
+}
+

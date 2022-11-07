@@ -1,4 +1,3 @@
-globalPara = 16
 tempArr = []
 eraserToggle = false
 rainbowToggle = false
@@ -8,24 +7,15 @@ const adjustSize = document.querySelector("#size-btn")
 const eraserbtn = document.querySelector("#eraser-btn")
 const clearbtn = document.querySelector("#clear-btn")
 const rainbowbtn = document.querySelector("#rainbow-btn")
-adjustSize.addEventListener("click", popup);
 
 
-
-function popup(x) {
-    let para = prompt("Please enter a value", );
-        if (para > 64) {
-            alert("please pick a smaller number, 64 or less!")
-        } else {
-            const clearGrid = document.getElementById("gridDisplay");
-            while (clearGrid.lastElementChild) {
-                clearGrid.removeChild(clearGrid.lastElementChild);
-            }
-            let subPara = parseInt(para)
-            globalPara = subPara
-            let finalPara = (subPara * subPara)
-            dynamicGrid(finalPara)
-        }
+function gridChange(sliderFinalVal) {
+   const clearGrid = document.getElementById("gridDisplay");
+        while (clearGrid.lastElementChild) {
+        clearGrid.removeChild(clearGrid.lastElementChild);
+        } 
+    sliderFinalVal = (slider.value * slider.value)
+    dynamicGrid(sliderFinalVal)
 }
 
 
@@ -41,6 +31,20 @@ function dynamicGrid(gridSize) {
         tempArr[i] = temp
 }
 }
+
+const slider = document.querySelector("input#myRange")
+
+let sliderValue2 = document.querySelector("#sliderValue")
+sliderValue2.textContent = (slider.value + " x " + slider.value)
+
+slider.addEventListener("input", gridChange)
+slider.addEventListener("input", parameterUpdate)
+
+function parameterUpdate(updateSlider) {
+    updateSlider = slider.value + " x " + slider.value
+    sliderValue2.textContent = updateSlider
+}
+
 
 
 function changeColor(e) {
@@ -86,5 +90,4 @@ rainbowbtn.addEventListener("click", (e) => rainbowToggle = true)
 rainbowbtn.addEventListener("click", (e) => eraserToggle = false)
 
 
-
-window.onload = dynamicGrid(256)
+window.onload = dynamicGrid(slider.value * slider.value)
